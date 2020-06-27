@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="@drawable/grad_bg"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:layout_gravity="center">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/lay_Politica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="50dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/lay_Adivinanzas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/Politica"
             android:layout_width="0dp"
-            android:layout_height="170sp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_launcher_background" />
@@ -28,18 +35,21 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_below="@+id/lay_Politica"
         android:id="@+id/lay_Adivinanzas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
+        android:layout_below="@+id/lay_Politica"
+        android:layout_marginTop="10sp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/lay_Deportes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay_Politica">
 
         <ImageView
             android:id="@+id/Adivinanzas"
             android:layout_width="0dp"
-            android:layout_height="170sp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_launcher_background" />
@@ -47,18 +57,21 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_below="@+id/lay_Adivinanzas"
         android:id="@+id/lay_Deportes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
+        android:layout_below="@+id/lay_Adivinanzas"
+        android:layout_marginTop="10sp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/lay_Acciones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay_Adivinanzas">
 
         <ImageView
             android:id="@+id/Deportes"
             android:layout_width="0dp"
-            android:layout_height="170sp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_launcher_background" />
@@ -66,21 +79,24 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_below="@+id/lay_Deportes"
         android:id="@+id/lay_Acciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
+        android:layout_below="@+id/lay_Deportes"
+        android:layout_marginTop="10sp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay_Deportes">
 
         <ImageView
             android:id="@+id/Acciones"
             android:layout_width="0dp"
-            android:layout_height="170sp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_launcher_background" />
 
     </LinearLayout>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
