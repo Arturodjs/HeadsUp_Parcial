@@ -5,14 +5,17 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:background="#093657"
         android:id="@+id/idQuestions"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="80dp"
         android:textAlignment="center"
-        android:textSize="50dp"
+        android:textSize="40dp"
         android:text="QUESTION"
+        android:paddingVertical="20dp"
         android:textStyle="bold">
     </TextView>
 

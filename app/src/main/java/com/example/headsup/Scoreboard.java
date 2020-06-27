@@ -21,7 +21,7 @@ public class Scoreboard extends AppCompatActivity {
     ArrayList<String> res_correctas;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.leaderboard);
 
@@ -32,8 +32,8 @@ public class Scoreboard extends AppCompatActivity {
 
         puntos.setText("PUNTUACIÓN: " + ListaPreguntas.puntuacion);
 
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.formato_lista, res_correctas);
-        //lista.setAdapter(adapter);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, res_correctas);
+        lista.setAdapter(adapter);
 
     }
 }
