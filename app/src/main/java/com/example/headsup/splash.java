@@ -17,8 +17,7 @@ public class splash extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
 
         // Inicializar listas de preguntas
-        ListaPreguntas listManager = new ListaPreguntas();
-        listManager.llenarListas();
+        ListaPreguntas.llenarListas();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
@@ -45,4 +44,5 @@ public class splash extends AppCompatActivity {
         };
         timer.start();
     }
+
 }

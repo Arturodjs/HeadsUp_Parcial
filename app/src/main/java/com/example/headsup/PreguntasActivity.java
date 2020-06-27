@@ -1,5 +1,6 @@
 package com.example.headsup;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -19,6 +20,7 @@ public class PreguntasActivity extends AppCompatActivity {
     ArrayList<String> preguntas;
     String charade;
     CountDownTimer contador;
+    int puntos;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,33 +49,42 @@ public class PreguntasActivity extends AppCompatActivity {
         timer = (TextView) findViewById(R.id.Timer);
 
         // Mostrar pregunta
-        charade = chooseRandom(preguntas);
+        charade = chooseRandom();
         question.setText(charade);
 
         // Crear un contador
         CountDownTimer contador = new CountDownTimer(5000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-            timer.setText("seconds remaining: " + millisUntilFinished / 1000);
+                timer.setText("Segundos restantes: " + millisUntilFinished / 1000);
             }
 
             @Override
             public void onFinish() {
-                charade = chooseRandom(preguntas);
+                charade = chooseRandom();
+                question.setText(charade);
+                //this.start();
+                irScoreboard();
             }
         };
         contador.start();
-
-
     }
 
-    public String chooseRandom(ArrayList<String> lista){
+    private void irScoreboard() {
+
+        ListaPreguntas.puntuacion = puntos;
+
+        Intent intent = new Intent(this, Scoreboard.class);
+        startActivity(intent);
+    }
+
+    public String chooseRandom(){
         Random random =  new Random();
         String res = "";
-        for(int i = 0; i < lista.size(); i++){
-            int pos = random.nextInt(lista.size());
-            res = lista.get(pos); // devuelve entre 0 y lista.size()
-            lista.remove(pos);
+        for(int i = 0; i < preguntas.size(); i++){
+            int pos = random.nextInt(preguntas.size());
+            res = preguntas.get(pos); // devuelve entre 0 y lista.size()
+            preguntas.remove(pos);
         }
         return res;
     }

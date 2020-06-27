@@ -4,100 +4,104 @@ import java.util.ArrayList;
 
 public class ListaPreguntas {
 
-    public static ArrayList<String> preguntasAnimales;
-    public static ArrayList<String> preguntasPoliticas;
-    public static ArrayList<String> preguntasDeportes;
-    public static ArrayList<String> preguntasMusica;
+    public static ArrayList<String> preguntasAnimales = new ArrayList<String>();
+    public static ArrayList<String> preguntasPoliticas = new ArrayList<String>();
+    public static ArrayList<String> preguntasDeportes = new ArrayList<String>();
+    public static ArrayList<String> preguntasMusica = new ArrayList<String>();
 
     public static int listaActual = 0;
+
+    public static int puntuacion = 0;
+
+    public static ArrayList<String> preguntasCorrectas = new ArrayList<String>();
+
     // 1 para Animales
     // 2 para Politica
     // 3 para Deportes
     // 4 para Musica
 
-    public void llenarListas() {
-        this.preguntasAnimales.add(("Toro"));
-        this.preguntasAnimales.add(("Perro"));
-        this.preguntasAnimales.add(("Gato"));
-        this.preguntasAnimales.add(("Vaca"));
-        this.preguntasAnimales.add(("León"));
-        this.preguntasAnimales.add(("Dinosaurio"));
-        this.preguntasAnimales.add(("Tortuga"));
-        this.preguntasAnimales.add(("Armadillo"));
-        this.preguntasAnimales.add(("Cangrejo"));
-        this.preguntasAnimales.add(("Serpiente"));
-        this.preguntasAnimales.add(("Canguro"));
-        this.preguntasAnimales.add(("Mono"));
-        this.preguntasAnimales.add(("Caballo"));
-        this.preguntasAnimales.add(("Gallina"));
-        this.preguntasAnimales.add(("Araña"));
-        this.preguntasAnimales.add(("Tiburón"));
-        this.preguntasAnimales.add(("Lobo"));
-        this.preguntasAnimales.add(("Calamar"));
-        this.preguntasAnimales.add(("Estrella de mar"));
-        this.preguntasAnimales.add(("Dragón"));
-        this.preguntasDeportes.add(("Futbol"));
-        this.preguntasDeportes.add(("Baloncesto"));
-        this.preguntasDeportes.add(("Beisbol"));
-        this.preguntasDeportes.add(("Voleibol"));
-        this.preguntasDeportes.add(("Tennis"));
-        this.preguntasDeportes.add(("Golf"));
-        this.preguntasDeportes.add(("Atletismo"));
-        this.preguntasDeportes.add(("Turf"));
-        this.preguntasDeportes.add(("Surf"));
-        this.preguntasDeportes.add(("Natación"));
-        this.preguntasDeportes.add(("Ciclismo"));
-        this.preguntasDeportes.add(("Gimnasia"));
-        this.preguntasDeportes.add(("Boxeo"));
-        this.preguntasDeportes.add(("Lucha Libre"));
-        this.preguntasDeportes.add(("Arquería"));
-        this.preguntasDeportes.add(("Esgrima"));
-        this.preguntasDeportes.add(("Clavados"));
-        this.preguntasDeportes.add(("Maratón"));
-        this.preguntasDeportes.add(("Ping Pong"));
-        this.preguntasDeportes.add(("Futbol Americano"));
-        this.preguntasMusica.add(("Michael Jackson"));
-        this.preguntasMusica.add(("Elvis Presley"));
-        this.preguntasMusica.add(("Adele"));
-        this.preguntasMusica.add(("Justin Bieber"));
-        this.preguntasMusica.add(("Jennifer López"));
-        this.preguntasMusica.add(("Marc Anthony"));
-        this.preguntasMusica.add(("Jay-Z"));
-        this.preguntasMusica.add(("Snoop Dogg"));
-        this.preguntasMusica.add(("Guns'n Roses"));
-        this.preguntasMusica.add(("Linkin Park"));
-        this.preguntasMusica.add(("Daddy Yankee"));
-        this.preguntasMusica.add(("Don Omar"));
-        this.preguntasMusica.add(("Romeo Santos"));
-        this.preguntasMusica.add(("Los Hermanos Rosario"));
-        this.preguntasMusica.add(("Toño Rosario"));
-        this.preguntasMusica.add(("Mozart"));
-        this.preguntasMusica.add(("Beethoven"));
-        this.preguntasMusica.add(("AC/DC"));
-        this.preguntasMusica.add(("Queen"));
-        this.preguntasMusica.add(("Green Day"));
-        this.preguntasPoliticas.add( ("Donald Trump"));
-        this.preguntasPoliticas.add( ("Xi Jinping"));
-        this.preguntasPoliticas.add( ("Leonel Fernández"));
-        this.preguntasPoliticas.add( ("Hipólito Mejía"));
-        this.preguntasPoliticas.add( ("George Bush"));
-        this.preguntasPoliticas.add( ("Barack Obama"));
-        this.preguntasPoliticas.add( ("Danilo Medina"));
-        this.preguntasPoliticas.add( ("Juan Bosch"));
-        this.preguntasPoliticas.add( ("Joaquín Balaguer"));
-        this.preguntasPoliticas.add( ("Rafael Leónidas Trujillo"));
-        this.preguntasPoliticas.add( ("Hillary Clinton"));
-        this.preguntasPoliticas.add( ("John F. Kennedy"));
-        this.preguntasPoliticas.add( ("Vladimir Putin"));
-        this.preguntasPoliticas.add( ("Boris Johnson"));
-        this.preguntasPoliticas.add( ("Isabel II"));
-        this.preguntasPoliticas.add( ("Justin Trudeau"));
-        this.preguntasPoliticas.add( ("Richard Nixon"));
-        this.preguntasPoliticas.add( ("Abraham Lincoln"));
-        this.preguntasPoliticas.add( ("Mariano Rajoy"));
-        this.preguntasPoliticas.add( ("Nicolás Maduro"));
+    public static void llenarListas() {
+        ListaPreguntas.preguntasAnimales.add("Toro");
+        ListaPreguntas.preguntasAnimales.add("Perro");
+        ListaPreguntas.preguntasAnimales.add("Gato");
+        ListaPreguntas.preguntasAnimales.add("Vaca");
+        ListaPreguntas.preguntasAnimales.add("León");
+        ListaPreguntas.preguntasAnimales.add("Dinosaurio");
+        ListaPreguntas.preguntasAnimales.add("Tortuga");
+        ListaPreguntas.preguntasAnimales.add("Armadillo");
+        ListaPreguntas.preguntasAnimales.add("Cangrejo");
+        ListaPreguntas.preguntasAnimales.add("Serpiente");
+        ListaPreguntas.preguntasAnimales.add("Canguro");
+        ListaPreguntas.preguntasAnimales.add("Mono");
+        ListaPreguntas.preguntasAnimales.add("Caballo");
+        ListaPreguntas.preguntasAnimales.add("Gallina");
+        ListaPreguntas.preguntasAnimales.add("Araña");
+        ListaPreguntas.preguntasAnimales.add("Tiburón");
+        ListaPreguntas.preguntasAnimales.add("Lobo");
+        ListaPreguntas.preguntasAnimales.add("Calamar");
+        ListaPreguntas.preguntasAnimales.add("Estrella de mar");
+        ListaPreguntas.preguntasAnimales.add("Dragón");
+        ListaPreguntas.preguntasDeportes.add("Futbol");
+        ListaPreguntas.preguntasDeportes.add("Baloncesto");
+        ListaPreguntas.preguntasDeportes.add("Beisbol");
+        ListaPreguntas.preguntasDeportes.add("Voleibol");
+        ListaPreguntas.preguntasDeportes.add("Tennis");
+        ListaPreguntas.preguntasDeportes.add("Golf");
+        ListaPreguntas.preguntasDeportes.add("Atletismo");
+        ListaPreguntas.preguntasDeportes.add("Turf");
+        ListaPreguntas.preguntasDeportes.add("Surf");
+        ListaPreguntas.preguntasDeportes.add("Natación");
+        ListaPreguntas.preguntasDeportes.add("Ciclismo");
+        ListaPreguntas.preguntasDeportes.add("Gimnasia");
+        ListaPreguntas.preguntasDeportes.add("Boxeo");
+        ListaPreguntas.preguntasDeportes.add("Lucha Libre");
+        ListaPreguntas.preguntasDeportes.add("Arquería");
+        ListaPreguntas.preguntasDeportes.add("Esgrima");
+        ListaPreguntas.preguntasDeportes.add("Clavados");
+        ListaPreguntas.preguntasDeportes.add("Maratón");
+        ListaPreguntas.preguntasDeportes.add("Ping Pong");
+        ListaPreguntas.preguntasDeportes.add("Futbol Americano");
+        ListaPreguntas.preguntasMusica.add("Michael Jackson");
+        ListaPreguntas.preguntasMusica.add("Elvis Presley");
+        ListaPreguntas.preguntasMusica.add("Adele");
+        ListaPreguntas.preguntasMusica.add("Justin Bieber");
+        ListaPreguntas.preguntasMusica.add("Jennifer López");
+        ListaPreguntas.preguntasMusica.add("Marc Anthony");
+        ListaPreguntas.preguntasMusica.add("Jay-Z");
+        ListaPreguntas.preguntasMusica.add("Snoop Dogg");
+        ListaPreguntas.preguntasMusica.add("Guns'n Roses");
+        ListaPreguntas.preguntasMusica.add("Linkin Park");
+        ListaPreguntas.preguntasMusica.add("Daddy Yankee");
+        ListaPreguntas.preguntasMusica.add("Don Omar");
+        ListaPreguntas.preguntasMusica.add("Romeo Santos");
+        ListaPreguntas.preguntasMusica.add("Los Hermanos Rosario");
+        ListaPreguntas.preguntasMusica.add("Toño Rosario");
+        ListaPreguntas.preguntasMusica.add("Mozart");
+        ListaPreguntas.preguntasMusica.add("Beethoven");
+        ListaPreguntas.preguntasMusica.add("AC/DC");
+        ListaPreguntas.preguntasMusica.add("Queen");
+        ListaPreguntas.preguntasMusica.add("Green Day");
+        ListaPreguntas.preguntasPoliticas.add("Donald Trump");
+        ListaPreguntas.preguntasPoliticas.add("Xi Jinping");
+        ListaPreguntas.preguntasPoliticas.add("Leonel Fernández");
+        ListaPreguntas.preguntasPoliticas.add("Hipólito Mejía");
+        ListaPreguntas.preguntasPoliticas.add("George Bush");
+        ListaPreguntas.preguntasPoliticas.add("Barack Obama");
+        ListaPreguntas.preguntasPoliticas.add("Danilo Medina");
+        ListaPreguntas.preguntasPoliticas.add("Juan Bosch");
+        ListaPreguntas.preguntasPoliticas.add("Joaquín Balaguer");
+        ListaPreguntas.preguntasPoliticas.add("Rafael Leónidas Trujillo");
+        ListaPreguntas.preguntasPoliticas.add("Hillary Clinton");
+        ListaPreguntas.preguntasPoliticas.add("John F. Kennedy");
+        ListaPreguntas.preguntasPoliticas.add("Vladimir Putin");
+        ListaPreguntas.preguntasPoliticas.add("Boris Johnson");
+        ListaPreguntas.preguntasPoliticas.add("Isabel II");
+        ListaPreguntas.preguntasPoliticas.add("Justin Trudeau");
+        ListaPreguntas.preguntasPoliticas.add("Richard Nixon");
+        ListaPreguntas.preguntasPoliticas.add("Abraham Lincoln");
+        ListaPreguntas.preguntasPoliticas.add("Mariano Rajoy");
+        ListaPreguntas.preguntasPoliticas.add("Nicolás Maduro");
 
     }
-
 
 }
