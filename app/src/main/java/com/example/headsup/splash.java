@@ -15,6 +15,11 @@ public class splash extends AppCompatActivity {
     //Esto es el splash screen, inicializando y programan transicion
     @Override
         protected void onCreate(Bundle savedInstanceState) {
+
+        // Inicializar listas de preguntas
+        ListaPreguntas listManager = new ListaPreguntas();
+        listManager.llenarListas();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
         txtV = (TextView) findViewById(R.id.splash_txt);
@@ -38,6 +43,6 @@ public class splash extends AppCompatActivity {
                 }
             }
         };
-            timer.start();
+        timer.start();
     }
 }
