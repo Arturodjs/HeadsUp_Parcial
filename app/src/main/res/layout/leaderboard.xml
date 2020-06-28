@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
+        android:layout_weight="2"
         android:paddingBottom="20dp"
         android:background="#093657">
 
@@ -52,9 +54,41 @@
     <ListView
         android:id="@+id/listLeaderBoard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
+        android:layout_weight="5"
         android:layout_marginTop="30dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:background="#093657"
+        android:paddingTop="15dp"
+
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/getBack"
+            android:onClick="onClick"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="VOLVER"
+            android:layout_marginHorizontal="5dp">
+        </Button>
+
+        <Button
+            android:id="@+id/newTry"
+            android:onClick="onClick"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="REINTENTAR">
+        </Button>
+    </LinearLayout>
 
 
 </LinearLayout>

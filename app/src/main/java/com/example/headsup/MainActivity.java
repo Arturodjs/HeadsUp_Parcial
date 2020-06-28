@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 ListaPreguntas.listaActual = 4;
                 break;
         }
-        Intent intent = new Intent(this, PreguntasActivity.class);
+        Intent intent = new Intent(this, forehead_splash.class);
         startActivity(intent);
     }
 }

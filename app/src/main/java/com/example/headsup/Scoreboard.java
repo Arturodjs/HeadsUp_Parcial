@@ -1,7 +1,10 @@
 package com.example.headsup;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -36,4 +39,18 @@ public class Scoreboard extends AppCompatActivity {
         lista.setAdapter(adapter);
 
     }
+
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case (R.id.newTry):
+                Intent intent = new Intent(this, PreguntasActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case (R.id.getBack):
+                finish();
+                break;
+        }
+    }
+
 }

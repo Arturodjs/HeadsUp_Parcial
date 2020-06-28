@@ -26,14 +26,14 @@ public class PreguntasActivity extends AppCompatActivity {
     String charade;
     CountDownTimer contador;
     int puntos = 0;
+    Gyroscope gyroscope;
     ArrayList<String> preguntas_correctas = new ArrayList<String>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.questions_layout);
-
-        Gyroscope gyroscope = new Gyroscope(this);
+        gyroscope = new Gyroscope(this);
 
         gyroscope.setListener(new Gyroscope.Listener() {
             @Override
@@ -74,7 +74,7 @@ public class PreguntasActivity extends AppCompatActivity {
         question.setText(charade);
 
         // Crear un contador
-        CountDownTimer contador = new CountDownTimer(10000, 1000) {
+        CountDownTimer contador = new CountDownTimer(60000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timer.setText("Segundos restantes: " + millisUntilFinished / 1000);
@@ -106,6 +106,7 @@ public class PreguntasActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, Scoreboard.class);
         startActivity(intent);
+        finish();
     }
 
     public String chooseRandom(){
@@ -117,5 +118,17 @@ public class PreguntasActivity extends AppCompatActivity {
             preguntas.remove(pos);
         }
         return res;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        gyroscope.register();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        gyroscope.unregister();
     }
 }
